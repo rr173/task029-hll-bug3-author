@@ -119,7 +119,7 @@ func (h *HLL) Estimate() float64 {
 	// implemented for completeness.
 	twoPow64 := math.Ldexp(1, wordBits)
 	if e > twoPow64/30.0 {
-		return -twoPow64 * math.Log2(1.0-e/twoPow64)
+		return -twoPow64 * math.Log(1.0-e/twoPow64)
 	}
 
 	return e
